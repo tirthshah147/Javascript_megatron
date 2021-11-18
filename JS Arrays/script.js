@@ -185,11 +185,17 @@ var color = ['red', 'blue', 'green', 'purple', 'black',"white"];
 // var index = color.lastIndexOf('black');
 // console.log(index);
 
-
-//splice
+//splice (index, num_of_items_to_be_deleted)
 // var color = ['red', 'blue', 'green', 'purple', 'black',"white"];
 
 // ['red', 'pink', 'magenta','blue', 'green', 'purple', 'black',"white"]
 // color.splice(0,1);
 // color.splice(1,2,'pink', 'magenta', 'violet');
 // console.log(color);
+
+//slice (index1, index2) subarray
+// const fruits = ["Bana", "Ora", "Lem", 'App', 'Man'];
+// console.log(fruits.slice(0,3));
+
+//looping looping methods
+
