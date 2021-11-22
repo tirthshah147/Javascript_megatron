@@ -100,7 +100,7 @@
 
 // color[1] = 5;
 
-var color = ['red', 'blue', 'green', 'purple', 'black',"white"];
+// var color = ['red', 'blue', 'green', 'purple', 'black',"white"];
 
 
 //length
@@ -197,5 +197,164 @@ var color = ['red', 'blue', 'green', 'purple', 'black',"white"];
 // const fruits = ["Bana", "Ora", "Lem", 'App', 'Man'];
 // console.log(fruits.slice(0,3));
 
-//looping looping methods
+//looping array methods
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+// for (let index = 0; index < arr.length; index++) {
+//     console.log(arr[index].name);
+    
+// }
+
+//forEach
+
+// item = {name:"Rahul", age:12}
+// index = 1
+// arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+
+// arr.forEach(function(item,index){
+//      console.log(item.name, index)
+// })
+
+//filter 
+// var filteredArray = [];
+// for (let index = 0; index < arr.length; index++) {
+//     if (arr[index]['age'] >= 18) {
+//         filteredArray.push(arr[index])
+//     }
+// }
+// console.log(filteredArray);
+
+// [{name:"Tirth", age:23},{name:"sandeep", age:50},  {name:"Siva", age:20} ]
+// var filteredArray = arr.filter(function(item){
+//     if (item.age >= 18) {
+//         return true
+//     }
+// })
+
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+
+// var filteredArray = arr.filter(function(item){
+//     return item.age >= 18    
+// })
+
+// var filteredArray = arr.filter((item) => item.age >= 18);
+// console.log(filteredArray);
+
+//map
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+// var ageArr = [];
+// for (let index = 0; index < arr.length; index++) {
+//     ageArr.push(arr[index].age + 2);
+    
+// }
+// console.log(ageArr);
+
+
+// var arrAge = arr.map(function(item){
+//     return item.age + 2;
+// });
+// console.log(arrAge);
+
+// var arrAge = arr.map((item) => item.age + 2);
+// console.log(arrAge);
+
+
+//reduce
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:12}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+// let sumOfAge = 0;
+// for (let index = 0; index < arr.length; index++) {
+//     sumOfAge = sumOfAge + arr[index]['age']
+// } 
+// console.log(sumOfAge);
+
+// let count = 0;
+// for (let index = 0; index < arr.length; index++) {
+//     count = count+ 1;
+// } 
+// console.log(count); //arr.length
+
+
+// var sumOfAg = arr.reduce(function(total, item){
+//     return total + item.age;
+// }, 0)
+// console.log(sumOfAg);
+
+//some
+// var arr = [
+//     {name:"Tirth", age:23},
+//     {name:"Rahul", age:18}, 
+//     {name:"sandeep", age:50}, 
+//     {name:"Siva", age:20}
+// ]
+
+// var hasAdultStud = arr.some(function(item){
+//     return item.age >= 18;
+// })
+
+// console.log(hasAdultStud);
+
+
+//every
+
+// var hasAllAdultStud = arr.every(function(item){
+//     return item.age >= 18;
+// })
+
+// console.log(hasAllAdultStud);
+
+//find
+// var foundAdultStud = arr.find((item) => item.age >= 18);
+// console.log(foundAdultStud);
+
+//Remove duplicates from array
+let a = [1,2,5,2,3,3,4,7];
+// let b = [1,2,5,3,4,7];
+
+// for (let index = 0; index < a.length; index++) {
+//    if (b.indexOf(a[index]) === -1) {
+//        b.push(a[index]);
+//    }
+// }
+
+// console.log(b);
+
+console.log([...new Set(a)]);
+
+
 
