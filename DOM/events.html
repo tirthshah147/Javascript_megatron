@@ -1,0 +1,79 @@
+<!-- Events -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events in Javascript</title>
+  </head>
+
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .css-box {
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+      margin: 10px;
+    }
+
+    #js-box {
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+      margin: 10px;
+    }
+
+    .css-box:hover {
+      background-color: orchid;
+    }
+  </style>
+
+  <body>
+    <h2>Events in Javascript</h2>
+
+    <div class="css-box">CSS Hover Example</div>
+
+    <div id="js-box">Javascript</div>
+
+    <button onmouseover="logHoverAction()">Hover over me!!</button>
+
+    <br />
+    <script>
+      let hoverCount = 0;
+      function logHoverAction() {
+        hoverCount += 1;
+        console.log("over mouse: ", hoverCount);
+      }
+
+      const jsBox = document.getElementById("js-box");
+
+      jsBox.addEventListener(
+        "mouseover",
+        function (event) {
+          // highlight the mouseover target
+          event.target.style.backgroundColor = "orange";
+        },
+        false
+      );
+
+      jsBox.addEventListener("mouseleave", function (event) {
+        event.target.style.backgroundColor = "";
+      });
+
+      jsBox.addEventListener(
+        "mouseenter",
+        function (event) {
+          // highlight the mouseover target
+          event.target.style.backgroundColor = "magenta";
+
+          // reset the color after a short delay
+          setTimeout(function () {
+            event.target.style.backgroundColor = "";
+          }, 500);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
