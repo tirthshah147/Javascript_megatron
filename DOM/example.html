@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample App</title>
+  </head>
+  <style>
+    .question {
+      background-color: lightcoral;
+    }
+
+    .selected {
+      background-color: lightblue;
+    }
+
+    .options {
+      margin: 10px;
+    }
+
+    .option {
+      margin: 5px 10px;
+    }
+  </style>
+  <body>
+    <h2>Quiz Sample</h2>
+
+    <div>
+      <div class="timer"><span id="timer"></span></div>
+
+      <div class="question" id="ques-1">
+        <p>Question 1: What is color of apple?</p>
+        <div class="options">
+          <button
+            class="option"
+            id="1"
+            value="opt1"
+            onclick="selectionHandler(1)"
+          >
+            Option 1
+          </button>
+          <button
+            class="option"
+            id="2"
+            value="opt2"
+            onclick="selectionHandler(2)"
+          >
+            Option 2
+          </button>
+          <button
+            class="option"
+            id="3"
+            value="opt3"
+            onclick="selectionHandler(3)"
+          >
+            Option 3
+          </button>
+          <button
+            class="option"
+            id="4"
+            value="opt4"
+            onclick="selectionHandler(4)"
+          >
+            Option 4
+          </button>
+        </div>
+      </div>
+      <br />
+
+      <button onclick="updateQuestionBackgroundColor()">
+        Update Question Background Color
+      </button>
+    </div>
+
+    <script>
+      let timerInstance = setInterval(myTimer, 1000);
+
+      function myTimer() {
+        const d = new Date();
+        document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+      }
+
+      let btnDisabled = false;
+
+      function updateQuestionBackgroundColor() {
+        const question = document.getElementById("ques-1");
+
+        question.classList.add("selected");
+        question.style.display = "none";
+
+        setTimeout(function () {
+          question.classList.remove("selected");
+          question.style.display = "block";
+        }, 1000);
+      }
+
+      function selectionHandler(answerId) {
+        const selectedElement = document.getElementById(answerId);
+
+        const correctAnswer = "opt2";
+        console.log(selectedElement.value === correctAnswer);
+
+        selectedElement.value === correctAnswer
+          ? alert("You won 5cr RS")
+          : alert("Sorry!!");
+      }
+
+      function disableBtns() {
+        for (let i = 1; i < 5; i++) {
+          document.getElementById(i).disabled = true;
+        }
+
+        clearInterval(timerInstance);
+
+        alert("Time is over!");
+      }
+
+      setTimeout(disableBtns, 5000);
+
+      function isBtnDisabled() {
+        return btnDisabled;
+      }
+    </script>
+  </body>
+</html>

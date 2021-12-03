@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Timing</h2>
+
+    <p>A script on this page starts this clock:</p>
+
+    <p id="demo"></p>
+
+    <button onclick="clearInterval(myVar)">Stop time</button>
+
+    <button onclick="myVar = setInterval(myTimer, 1000)">Start time</button>
+
+    <script>
+      let myVar = setInterval(myTimer, 1000); // after every 1s it will be called
+
+      function myTimer() {
+        const d = new Date();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Timing</h2>
+
+    <p>Click "Try it". Wait 3 seconds. The page will alert "Hello".</p>
+    <p>Click "Stop" to prevent the first function to execute.</p>
+    <p>(You must click "Stop" before the 3 seconds are up.)</p>
+
+    <button onclick="myVar = setTimeout(myFunction, 3000)">Try it</button>
+
+    <button onclick="clearTimeout(myVar)">Stop it</button>
+
+    <script>
+      function myFunction() {
+        alert("Hello");
+      }
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaSript setTimeout()</h2>
+
+    <p id="demo">I will display when two, four, and six seconds have passed.</p>
+
+    <script>
+      for (let i = 1; i <= 11; i += 2) {
+        setTimeout(myTimeout(i), i * 1000);
+      }
+
+      function myTimeout(value) {
+        document.getElementById("demo").innerHTML = value + " seconds";
+      }
+
+      // setTimeout(myTimeout1, 2000);
+      // setTimeout(myTimeout2, 4000);
+      // setTimeout(myTimeout3, 6000);
+
+      // function myTimeout1() {
+      //   document.getElementById("demo").innerHTML = "2 seconds";
+      // }
+      // function myTimeout2() {
+      //   document.getElementById("demo").innerHTML = "4 seconds";
+      // }
+      // function myTimeout3() {
+      //   document.getElementById("demo").innerHTML = "6 seconds";
+      // }
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <body onload="startTime()">
+    <h2>JavaScript Clock</h2>
+
+    <div id="txt"></div>
+
+    <script>
+      function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+      }
+
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        } // add zero in front of numbers < 10
+        return i;
+      }
+    </script>
+  </body>
+</html> -->

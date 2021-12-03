@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Example</title>
+  </head>
+  <body>
+    <h1>Window Example</h1>
+
+    <button onclick="throw new Error('random error log')">
+      Click me to generate error
+    </button>
+
+    <script>
+      window.onerror = function (err) {
+        console.log("Something went wrong!", err);
+      };
+    </script>
+  </body>
+</html>

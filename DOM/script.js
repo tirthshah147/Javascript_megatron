@@ -15,7 +15,6 @@
 
 // console.log(links);
 
-
 // const xyz = document.querySelectorAll('.navbar__links');
 // console.log(xyz);
 
@@ -36,7 +35,6 @@
 //     item.innerHTML += "<h3> Hiiii!</h3> <h2>krjkjgk</h2>";
 // })
 
-
 //DOM NODES
 // const header = document.getElementById('header');
 // console.log('NodeType of this header is', header.nodeType);
@@ -45,9 +43,6 @@
 
 // var cloneOfHeader = header.cloneNode(true);
 // console.log(cloneOfHeader);
-
-
-
 
 //traversing a DOM
 // const navbar = document.getElementById('navbar');
@@ -58,31 +53,45 @@
 // console.log('the child node of navbar is', navbar.childNodes);
 // console.log('the child node of navbar is', navbar.children);
 
-
 // console.log('next sibling of navbar is', navbar.nextElementSibling.nextElementSibling);
 // console.log('next sibling of navbar is', navbar.nextSibling);
 // console.log('previous sibling of navbar is', navbar.previousElementSibling);
 
 // navbar.previousElementSibling.innerHTML = "<i>Immortal</i>";
 
-let delBtns = document.querySelectorAll('.delete');
-Array.from(delBtns).forEach(function(btn){
-    btn.addEventListener('click',function(event){
-       console.log(event.target);
-       let clickedBtn = event.target;
-       let liSelected = clickedBtn.parentElement;
-       let ulSelected = liSelected.parentElement;
-       ulSelected.removeChild(liSelected);
-    //    console.log(li);
-    },true)
-})
+/*
 
+    BODY
+        UL ( child of BODY )
+            LI ( child of UL )
+                BTN ( child of LI )
 
-let lis = document.querySelectorAll('li');
-lis.forEach(function(li){
-    li.addEventListener('click', function(event){
-        console.log('Hii..Li is clicked');
-    }, true)
-})
+*/
 
+let delBtns = document.querySelectorAll(".delete");
+Array.from(delBtns).forEach(function (btn) {
+  btn.addEventListener(
+    "click",
+    function (event) {
+      console.log(event.target);
+      let clickedBtn = event.target;
+      let liSelected = clickedBtn.parentElement;
+      let ulSelected = liSelected.parentElement;
 
+      // console.log(ulSelected.parentElement);
+      ulSelected.removeChild(liSelected);
+    },
+    true
+  );
+});
+
+let lis = document.querySelectorAll("li");
+lis.forEach(function (li) {
+  li.addEventListener(
+    "click",
+    function (event) {
+      console.log("Hii..Li is clicked");
+    },
+    true
+  );
+});

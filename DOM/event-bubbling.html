@@ -1,0 +1,39 @@
+<!-- Event Bubbling -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bubbling Event in Javascript</title>
+  </head>
+
+  <body>
+    <h2>Bubbling Event in Javascript</h2>
+
+    <div id="parent">
+      <button>
+        <h2>Parent</h2>
+      </button>
+      <button id="child" onclick="event.stopPropagation()">
+        <p>Child</p>
+      </button>
+    </div>
+    <br />
+
+    <script>
+      document.getElementById("child").addEventListener(
+        "click",
+        function () {
+          alert("You clicked the Child element!");
+        },
+        false
+      );
+
+      document.getElementById("parent").addEventListener(
+        "click",
+        function () {
+          alert("You clicked the parent element!");
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
