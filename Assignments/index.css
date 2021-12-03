@@ -1,0 +1,32 @@
+/* #box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: transform 2s;
+} */
+
+
+
+#wrapper{
+    display: grid;
+    width: 180px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#wrapper div{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#ffffff;
+}
+
+#wrapper div:nth-child(odd){
+    background-color: rgb(180, 179, 179);
+}
+
+
+
+
+
