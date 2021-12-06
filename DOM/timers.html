@@ -9,15 +9,13 @@
 
     <button onclick="clearInterval(myVar)">Stop time</button>
 
-    <button onclick="myVar = setInterval(myTimer, 1000)">Start time</button>
+    <!-- <button onclick="myVar = setInterval(myTimer, 1000)">Start time</button> -->
 
     <script>
-      let myVar = setInterval(myTimer, 1000); // after every 1s it will be called
-
-      function myTimer() {
+      let myVar = setInterval(function () {
         const d = new Date();
         document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-      }
+      }, 1000); // after every 1s it will be called
     </script>
   </body>
 </html>
