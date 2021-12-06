@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elements</title>
+  </head>
+  <style>
+    .red-color-cls {
+      color: red;
+    }
+
+    .green-color-cls {
+      color: green;
+    }
+
+    .orange-color-cls {
+      color: orange;
+    }
+
+    #red-color-id {
+      color: red;
+    }
+
+    .bold-cls {
+      font-weight: bold;
+    }
+
+    .font-size-20 {
+      font-size: 20px;
+    }
+  </style>
+
+  <!-- <button onclick="createHeadingElement()">Create Heading Element</button> -->
+  <body>
+    <button onclick="addCustomizedHtmlTag()">
+      Add customized HTML element
+    </button>
+
+    <button onclick="removeAttributes()">Remove attributes to element</button>
+  </body>
+  <script>
+    // var h1 = document.createElement("h1");
+    // var text = document.createTextNode("this is h1 heading!");
+    // h1.appendChild(text);
+    // document.body.appendChild(h1);
+
+    // // // using onclick handler
+    // function createHeadingElement() {
+
+    //   const h2 = document.createElement("h2");
+    //   const span = document.createElement("span");
+
+    //   const input = document.createElement("input");
+
+    //   const button = document.createElement("button");
+
+    //   const image = document.createElement("img");
+
+    //   const textNodeForH1tag = document.createTextNode("H1 tag");
+    //   const textNodeForH2tag = document.createTextNode("H2 tag");
+    //   const textNodeForSpanTag = document.createTextNode("Span tag");
+
+    //   input.placeholder = "this is placeholder";
+    //   input.value = "abhishek";
+
+    //   button.innerHTML = "Submit";
+    //   button.onclick = function () {
+    //     console.log("button called!!");
+    //   };
+
+    //   image.src =
+    //     "https://cdn.pixabay.com/photo/2017/01/08/13/58/cube-1963036__340.jpg";
+
+    //   h1.appendChild(textNodeForH1tag);
+    //   h2.appendChild(textNodeForH2tag);
+    //   span.appendChild(textNodeForSpanTag);
+
+    //   document.body.appendChild(h1);
+    //   document.body.appendChild(h2);
+    //   document.body.appendChild(span);
+    //   document.body.appendChild(input);
+    //   document.body.appendChild(button);
+    //   document.body.appendChild(image);
+    // }
+
+    let id = 1;
+
+    function addCustomizedHtmlTag() {
+      const paragraph = document.createElement("p");
+      const text = document.createTextNode("this is random text");
+
+      paragraph.appendChild(text);
+
+      paragraph.setAttribute("class", "bold-cls");
+      paragraph.setAttribute("id", "demo-node-" + id);
+
+      // BAD PRACTICE
+      // paragraph.setAttribute("style", "background-color: aqua");
+      // paragraph.setAttribute("style", "color: red");
+
+      document.body.appendChild(paragraph);
+
+      document.getElementById("demo-node-1").classList.add("font-size-20");
+      document.getElementById("demo-node-1").classList.add("orange-color-cls");
+
+      // GOOD PRACTICE
+      // if (document.getElementById("demo-node-2")) {
+      //   document.getElementById("demo-node-2").style.backgroundColor = "aqua";
+      //   document.getElementById("demo-node-2").style.color = "red";
+      // }
+      // document.getElementById("demo-node-1").style.backgroundColor = "aqua";
+      // document.getElementById("demo-node-1").style.color = "red";
+
+      id = id + 1;
+    }
+
+    function updateColor() {
+      const h1 = document.getElementsByTagName("H1")[0];
+
+      if (h1.hasAttribute("class")) {
+        h1.setAttribute("class", "green-color-cls");
+      } else {
+        h1.setAttribute("class", "orange-color-cls");
+      }
+    }
+
+    function removeAttributes() {
+      document.getElementsByTagName("p")[0].removeAttribute("class");
+      document.getElementsByTagName("p")[0].removeAttribute("id");
+    }
+  </script>
+</html>

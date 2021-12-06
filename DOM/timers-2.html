@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timers part 2</title>
+  </head>
+  <body>
+    <div>
+      <span id="text-node"
+        >This is a text node that will get updated after each 5s using
+        setInterval function</span
+      >
+      <br />
+
+      <button onclick="cancelTimer()">Cancel Timer</button>
+    </div>
+  </body>
+  <script>
+    const five_seconds = 5000;
+    let lapsedTime = 5;
+
+    // const timer = setTimeout(function () {
+    //   const textNode = document.getElementById("text-node");
+    //   textNode.innerHTML = "Updated after 5 seconds";
+    // }, five_seconds);
+
+    // gets fired after each interval that we specify
+    // 5s => after every 5s, timer gets called
+    const timer = setInterval(function () {
+      const textNode = document.getElementById("text-node");
+      textNode.innerHTML = "Updated after " + lapsedTime + " seconds";
+      lapsedTime = lapsedTime + 5;
+    }, five_seconds);
+
+    function cancelTimer() {
+      clearInterval(timer);
+      console.log("Timer has been cancelled");
+    }
+  </script>
+</html>
