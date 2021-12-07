@@ -65,24 +65,90 @@
 
 // navbar.previousElementSibling.innerHTML = "<i>Immortal</i>";
 
-let delBtns = document.querySelectorAll('.delete');
-Array.from(delBtns).forEach(function(btn){
-    btn.addEventListener('click',function(event){
-       console.log(event.target);
-       let clickedBtn = event.target;
-       let liSelected = clickedBtn.parentElement;
-       let ulSelected = liSelected.parentElement;
-       ulSelected.removeChild(liSelected);
-    //    console.log(li);
-    },true)
+// function addClickToDelButtons(){
+//     let delBtns = document.querySelectorAll('.delete');
+//     Array.from(delBtns).forEach(function(btn){
+//         btn.addEventListener('click',function(event){
+//            console.log(event.target);
+//            let clickedBtn = event.target;
+//            let liSelected = clickedBtn.parentElement;
+//            let ulSelected = liSelected.parentElement;
+//            ulSelected.removeChild(liSelected);
+//         //    console.log(li);
+//         },true)
+//     })
+// }
+
+// addClickToDelButtons();
+
+const list = document.querySelector('.list');
+
+list.addEventListener('click',function(e){
+    console.log('Ul elements are clicked')
+    if (e.target.className === 'delete') {
+        // console.log('Delete button is clicked')
+        const li = e.target.parentElement;
+        list.removeChild(li);
+    }
 })
 
 
-let lis = document.querySelectorAll('li');
-lis.forEach(function(li){
-    li.addEventListener('click', function(event){
-        console.log('Hii..Li is clicked');
-    }, true)
+
+
+
+// let lis = document.querySelectorAll('li');
+// lis.forEach(function(li){
+//     li.addEventListener('click', function(event){
+//         console.log('Hii..Li is clicked');
+//     }, true)
+// })
+
+const addTodoForm = document.forms['todo-add-form'];
+console.log(addTodoForm.querySelector('input[type="text"]'));
+
+
+addTodoForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    const value = addTodoForm.querySelector('input[type="text"]').value;
+    
+    //creating elements
+    const li = document.createElement('li');
+    const foodTitle = document.createElement('span');
+    const deleteButton = document.createElement('button');
+
+    //let's add content
+    foodTitle.textContent = value;
+    deleteButton.textContent = "Click Me";
+
+    //add classes
+    foodTitle.className = 'food'
+    deleteButton.className = 'delete'
+    
+    //append span & button to li
+    li.appendChild(foodTitle);
+    li.appendChild(deleteButton);
+    list.appendChild(li);
+
+
+
+    // deleteButton.addEventListener('click',function(event){
+    //     console.log(event.target);
+    //     let clickedBtn = event.target;
+    //     let liSelected = clickedBtn.parentElement;
+    //     let ulSelected = liSelected.parentElement;
+    //     ulSelected.removeChild(liSelected);
+    //  //    console.log(li);
+    //  }) //second way
+    
+    // addClickToDelButtons(); //first way
+
 })
 
+// but1.delete  click=''
+// but2.delete  click=''
+// but3.delete   click=''
+// but4.delete   click=''
 
+// but5.delete click=''
+
+// document.querySelectorAll("a[href='www.google.com']")
